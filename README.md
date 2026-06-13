@@ -41,3 +41,10 @@ java -jar target/*.jar
 ## Демо
 
 https://url-check-mtym.onrender.com
+
+---
+
+## Пример
+
+<img width="595" height="450" alt="image" src="https://github.com/user-attachments/assets/d926d5ad-b7bf-42c3-a5a8-8a5c022a3fe1" />
+
