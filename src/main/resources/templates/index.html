@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Проверка на защиту</title>
+</head>
+<body>
+    <form action="/analyze" method="get">
+       <span class="root">root@user:$ </span>  <span class="pulse-arrow">></span>
+        <input type="text" name="url" placeholder="Введите URL, например: google.com" size="40"/>
+        <button type="submit" class="button">Enter</button>
+        
+    </form>
+
+    <div th:if="${report != null}" class="result">
+        <h3>Результат проверки для: <span th:text="${report.url}"></span></h3>
+        <p><strong>Статус код: </strong> <span th:text="${report.statusCode}"></span></p>
+        <p>
+            <strong>HTTPS:</strong>
+            <span th:class="${report.hasHttps} ? 'good' : 'bad'"
+                th:text="${report.hasHttps} ? 'Используется' : 'Не используется'"></span>
+        </p>
+        <p>
+            <strong>HSTS:</strong>
+            <span th:class="${report.hasHsts} ? 'good' : 'bad'"
+                th:text="${report.hasHsts} ? 'Используется' : 'Не используется'"></span>
+        </p>
+        <p>
+            <strong>CSP:</strong>
+            <span th:class="${report.hasCsp} ? 'good' : 'bad'"
+                th:text="${report.hasCsp} ? 'Используется' : 'Не используется'"></span>
+        </p>
+        <p>
+            <strong>X-Frame-Options: </strong>
+            <span th:class="${report.hasXFrameOptions} ? 'good' : 'bad'"
+                th:text="${report.hasXFrameOptions} ? 'Используется' : 'Не используется'"></span>
+        </p>
+        <p>
+            <strong>X-Content-Type-Options: </strong>
+            <span th:class="${report.hasXContentTypeOptions} ? 'good' : 'bad'"
+                th:text="${report.hasXContentTypeOptions} ? 'Используется' : 'Не используется'"></span>
+        </p>
+        <p>
+            <strong>Referrer-Policy: </strong>
+            <span th:class="${report.hasReferrerPolicy} ? 'good' : 'bad'"
+                th:text="${report.hasReferrerPolicy} ? 'Используется' : 'Не используется'"></span>
+        </p>
+        <p>
+            <strong>Info (Server/X-Powered-By): </strong>
+            <span th:class="${report.revealsServerInfo} ? 'good' : 'bad'"
+                th:text="${report.revealsServerInfo} ? ${report.serverInfo} : 'Не обнаружено'"></span>
+        </p>
+    </div>
+
+    <div th:if="${report == null}" class="result">
+        <h3>result: you don't enter a URL</span></h3>
+    </div>
+    <div  class="gif">
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+body {
+    background-color: black;
+    color: rgb(20, 177, 49);
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    min-height: 100vh;
+    padding-left: 40%;
+    
+}
+
+input {
+    background-color: black;
+    border: none;
+    outline: none;
+    color: rgb(20, 177, 49);
+}
+
+
+
+input:focus {
+
+    background-color: black;
+    color: rgb(20, 177, 49);
+}
+
+input::-webkit-input-placeholder {
+    color: rgb(36, 101, 6);
+}
+
+input::-moz-placeholder {
+    color: rgb(36, 101, 6);
+}
+
+input:-ms-input-placeholder {
+    color: rgb(36, 101, 6);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px black inset !important;
+    -webkit-text-fill-color: rgb(20, 177, 49) !important;
+}
+
+.button {
+    background-color: rgb(0, 0, 0);
+    border-radius: 50px;
+    border: none;
+    position: relative;
+    outline: none;
+    color: rgb(20, 177, 49);
+    padding: 10px 20px;
+    font-family: monospace;
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+}
+
+.button::before {
+    content: "\\_________/";
+    position: absolute;
+    top: 20px;
+    left: 0;
+    color: rgb(20, 177, 49);
+    font-family: monospace;
+    white-space: nowrap;
+}
+
+.button::after {
+    content: "/‾‾‾‾‾‾‾‾‾\\";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    color: rgb(20, 177, 49);
+    font-family: monospace;
+    white-space: nowrap;
+}
+
+.button:hover {
+    background-color: rgb(37, 37, 37);
+    color: rgb(20, 177, 49);
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+
+    }
+
+    50% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+
+    }
+}
+
+.pulse-arrow {
+    animation: pulse 1.2s ease-in-out infinite;
+    display: inline-block;
+}
+
+.root {
+    color: rgb(119, 43, 43);
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.result {
+    background-color: rgb(22, 21, 21);
+    border-radius: 1cm;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    width: 425px;
+
+}
+.gif
+{
+    background-image: url('https://media.tenor.com/QOXLieYuR6wAAAAi/junion-jun1on.gif');
+    position: fixed;
+    bottom: 20px;
+    right: 83%;
+    width: 300px;
+    height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1000;
+    cursor: pointer;
+}
